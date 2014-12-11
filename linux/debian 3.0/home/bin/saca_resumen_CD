@@ -1,0 +1,12 @@
+#!/bin/sh -x
+clear
+rmmod isofs >& /dev/null
+insmod isofs >& /dev/null
+mount -t iso9660 -o ro /dev/hdd /mnt/cdrom  >& /dev/null
+find /mnt/cdrom -name "INDEX" -exec echo "------------------------------------------------" ';' -print -exec echo "" \; -exec cat  \{\} \; 
+find /mnt/cdrom -name "*lsm" -exec echo "------------------------------------------------" ';' -print -exec echo "" \; -exec cat  \{\} \; 
+find /mnt/cdrom -name "*.rpm" -exec echo "------------------------------------------------" ';' -print -exec echo "" \; -exec rpm -q -i -p \{\} \; 
+umount /mnt/cdrom  >& /dev/null
+eject -u /dev/cdrom >& /dev/null
+
+

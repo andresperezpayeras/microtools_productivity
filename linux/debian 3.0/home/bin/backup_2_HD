@@ -1,0 +1,15 @@
+#!/bin/csh
+# Dump thingie
+tar -c -g -v\
+ -f /msdos/disco_d/linux.tar\
+ /users\
+ /home\
+ /root\
+ /etc/DIR_COLORS\
+ /etc/z*\
+ /etc/dosem*\
+ /usr/local\
+ /usr/lib/kbd/keytables/es.map
+
+
+

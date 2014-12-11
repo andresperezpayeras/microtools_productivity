@@ -1,0 +1,2 @@
+insmod vfat
+mount /msdos/disco_c

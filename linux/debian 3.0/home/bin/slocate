@@ -1,0 +1,27 @@
+#!/usr/bin/perl 
+
+if ($#ARGV==0){
+
+  $primer_param=$ARGV[0];
+
+  while ($primer_param ne ''){
+    $char=chop($primer_param);
+#   print "popped $char\n";
+    if ($char ne '*'){
+      $param='['.lc($char).uc($char).']'.$param;
+    } else {
+      $param=$char.$param;
+    }
+  }
+  $command="locate '*".$param."*'";
+  print "$command ;\n";
+  exec("$command");
+
+} else {
+  foreach $parm (@ARGV){
+    $i++;
+    print "argumento $i >>>>>>".$parm."<<<<<<<<<<<<<<\n";
+  }
+  die "numero erroneo de argumentos:\n\t\t\t\tuso:\tslocate cadena\n";
+}
+

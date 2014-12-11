@@ -1,0 +1,4 @@
+#!/bin/sh
+mount -t vfat -o mode=777  -o verbose /dev/fd0 /mnt/floppy
+echo "Si todo ha ido bien esta montado en /mnt/floppy"
+

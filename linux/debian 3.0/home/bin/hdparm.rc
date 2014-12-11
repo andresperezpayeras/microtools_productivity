@@ -1,0 +1,6 @@
+
+  hdparm -m 16 /dev/hda
+  hdparm  -c 1 /dev/hda
+  hdparm -W 1 /dev/hda
+  hdparm -u 1 /dev/hda
+  hdparm -d1 -X34 /dev/hda

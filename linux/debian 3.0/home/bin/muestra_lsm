@@ -1,0 +1,4 @@
+#!/bin/sh
+
+find . -name "*lsm" -exec echo "------------------------------------------------" ';' -print -exec echo "" \; -exec cat  \{\} \; 
+

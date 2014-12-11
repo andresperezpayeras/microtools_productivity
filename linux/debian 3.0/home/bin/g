@@ -1,0 +1,2 @@
+echo 'gpm -k; sleep 1; gpm -2'
+gpm -k; sleep 1; gpm -2

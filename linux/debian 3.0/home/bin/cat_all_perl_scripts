@@ -1,0 +1,23 @@
+#!/bin/sh  -x
+
+# usage: 
+#
+# grep_in_perl_scripts pattern
+#
+
+#problemas:
+#
+# no quiero que acceda /proc/kcore
+#   soluciones: no dejarle entrar en kcore   (no lo consigo)
+#               no le dejo salirse de ext2 como fs
+#
+find / \
+-fstype ext2 \
+-type f  \
+-exec grep -l -i '^#!/.*bin/.*perl'  \{\}  \;  \
+-exec echo "------------------------------------------------" ';'  \
+-exec echo "" \;  \
+-exec cat \{\} \;  \
+-exec echo ""  \; 
+
+

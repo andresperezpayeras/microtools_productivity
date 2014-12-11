@@ -1,0 +1,18 @@
+#!/bin/sh  -x
+
+# usage: 
+#
+# grep_in_shell_scripts pattern
+#
+
+find / \
+-type f \
+-fstype ext2 \
+-name "*" \
+-exec grep -l -i '^#!/bin/.*sh'  \{\}  \; \
+-exec echo "------------------------------------------------" ';' \
+-exec echo "" \; \
+-exec grep $1  \{\} \; \
+-exec echo "" \; 
+
+

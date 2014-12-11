@@ -1,0 +1,3 @@
+insmod isofs
+#sleep 2
+mount -t iso9660 -o ro /dev/hdd /mnt/cdrom

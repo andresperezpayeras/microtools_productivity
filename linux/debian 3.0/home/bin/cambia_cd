@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+system "clear";
+system "eject -u /dev/cdrom >& /dev/null";
+system "rmmod isofs >& /dev/null";
+system "insmod isofs >& /dev/null";
+print "*****************************************************\n";
+print "    Pulse return tecla cuando haya cambiado el CD\n";
+print "*****************************************************\n";
+$c=getc;
+system "mount -t iso9660 -o ro /dev/hdd /mnt/cdrom  >& /dev/null";
